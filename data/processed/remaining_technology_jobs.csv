@@ -1,0 +1,37 @@
+WIC_ID,Job_Title,Posting_Date,Province,City,Salary_Per,Salary_Minimum,Salary_Maximum
+15323259,data analyst - informatics and systems,2026-03-13,Ontario,Mississauga,Hour,43.96,43.96
+15341700,data scientist,2026-03-20,Ontario,,Year,85000.0,95000.0
+15342796,business data analyst,2026-03-20,Alberta,Edmonton,Hour,48.1,48.1
+15342389,data analytics specialist,2026-03-20,Ontario,Cambridge,Hour,25.0,35.0
+15355332,business data analyst,2026-03-25,Ontario,Nepean,Bi-weekly,3850.0,3850.0
+15363720,data analytics specialist,2026-03-30,Ontario,Toronto,Year,80000.0,115000.0
+15376895,data scientist,2026-04-03,New Brunswick,Shediac,Hour,42.0,45.0
+15488194,data scientist,2026-04-22,British Columbia,Burnaby,Hour,48.1,48.1
+15491326,business data analyst,2026-04-23,British Columbia,Burnaby,Hour,43.0,43.0
+15495035,data analyst - informatics and systems,2026-04-24,Ontario,Oshawa,Hour,20.0,20.0
+15500205,business data analyst,2026-04-27,Ontario,St. Thomas,Hour,41.5,41.5
+15507639,data analyst - informatics and systems,2026-04-29,Alberta,Calgary,Hour,44.5,44.5
+15514769,data quality analyst,2026-05-01,Ontario,Mississauga,Hour,44.5,44.5
+15553278,data analyst - informatics and systems,2026-05-15,Québec,Stoneham-et-Tewkesbury,Hour,40.0,40.0
+15554294,data analyst - informatics and systems,2026-05-15,British Columbia,Surrey,Hour,45.0,45.0
+15557280,data quality analyst,2026-05-17,Alberta,Fort McMurray,Hour,40.0,42.0
+15559130,data analyst - informatics and systems,2026-05-19,Ontario,Toronto,Year,135000.0,140000.0
+15566610,business data analyst,2026-05-20,Alberta,Edmonton,Hour,48.1,48.1
+15597075,business intelligence specialist,2026-06-01,Ontario,Toronto,Hour,46.0,46.0
+15601241,business data analyst,2026-06-02,Ontario,North York,Year,82810.0,82810.0
+15605205,data analyst - informatics and systems,2026-06-03,Saskatchewan,Saskatoon,Hour,30.0,41.0
+15604698,data analytics specialist,2026-06-03,Ontario,Toronto,Year,60000.0,75000.0
+15628713,data scientist,2026-06-11,Ontario,Mississauga,Hour,45.0,55.0
+15628476,business data analyst,2026-06-11,Alberta,Edmonton,Hour,46.0,48.0
+15642551,data analytics specialist,2026-06-16,Ontario,,Hour,35.0,35.0
+15644785,data analyst - informatics and systems,2026-06-17,British Columbia,,Year,62500.0,62500.0
+15651841,data analyst - informatics and systems,2026-06-19,Québec,Stoneham-et-Tewkesbury,Hour,40.0,40.0
+15657440,business data analyst,2026-06-22,Ontario,North York,Year,80000.0,80000.0
+15693882,data analyst - informatics and systems,2026-07-07,Québec,Stoneham-et-Tewkesbury,Hour,40.0,40.0
+15704901,data analyst - informatics and systems,2026-07-10,Ontario,Mississauga,Hour,45.0,45.0
+15730915,data scientist,2026-07-21,Saskatchewan,Saskatoon,Year,69880.0,94544.0
+15746387,data scientist,2026-07-28,Québec,Laval,Hour,41.91,49.1
+15747768,data scientist,2026-07-28,New Brunswick,Shediac,Hour,42.0,45.0
+15749186,business intelligence specialist,2026-07-29,Québec,Montréal,Hour,36.0,36.0
+15752280,data analytics specialist,2026-07-30,Québec,Mirabel,Year,79000.0,82000.0
+15752279,data analytics specialist,2026-07-30,Québec,Montréal,Year,79000.0,82000.0
