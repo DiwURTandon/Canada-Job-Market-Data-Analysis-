@@ -969,3 +969,54 @@ render_html(
     'Government of Canada Job Bank + OaSIS'
     '</div>'
 )
+
+
+# CONTACT
+
+render_html("<hr>")
+
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <h3 style="color: #1B3B6F; margin-bottom: 8px;">
+            About This Project
+        </h3>
+        <p style="color: #5B6472;">
+            Built with Python, pandas, SQL, SQLite, and Streamlit.
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+contact_left, contact_github, contact_email, contact_right = st.columns(
+    [1.5, 1, 1, 1.5]
+)
+
+with contact_github:
+    st.link_button(
+        "GitHub Repository",
+        "https://github.com/DiwURTandon/Canada-Job-Market-Data-Analysis-",
+        use_container_width=True
+    )
+
+with contact_email:
+    st.link_button(
+        "Contact Me",
+        "mailto:dtq303@uregina.ca",
+        use_container_width=True
+    )
+
+render_html(
+    """
+    <div style="
+        text-align: center;
+        color: #5B6472;
+        font-size: 0.82rem;
+        margin-top: 1rem;
+        padding-bottom: 1.5rem;
+    ">
+        © 2026 Diwakar Tandon
+    </div>
+    """
+)
