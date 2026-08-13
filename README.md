@@ -4,7 +4,7 @@
 
 This project analyzes real Canadian job posting data to explore the demand for data analytics and data science roles across Canada.
 
-The analysis focuses on job posting volume, geographic demand, salary patterns, occupational skills, and employer technology requirements. The final results are presented through an interactive Streamlit dashboard.
+The analysis focuses on job posting volume, geographic demand, salary patterns, occupational skills, and employer technology requirements. The final results are presented through an interactive web dashboard.
 
 The goal of this project is to provide an evidence-based view of what the Canadian data job market expects from candidates instead of relying only on general career advice.
 
@@ -22,7 +22,6 @@ Explore the interactive Canadian Job Market Dashboard:
 
 ![Canadian Job Market Analysis Dashboard](screenshots/dashboard-preview.png)
 
-
 ---
 
 ## Objective
@@ -35,7 +34,7 @@ The main objectives of this project are to:
 - Study important occupational skills for data-related careers.
 - Identify technologies and programming tools mentioned in verified Job Bank postings.
 - Store and query cleaned data using SQLite and SQL.
-- Present the findings through an interactive Streamlit dashboard.
+- Present the findings through an interactive web dashboard.
 
 ---
 
@@ -89,9 +88,13 @@ The project was developed using:
 - pandas
 - SQLite
 - SQL
+- HTML
+- CSS
+- JavaScript
 - Streamlit
 - Git
 - GitHub
+- GitHub Pages
 - Jupyter Notebook
 
 ---
@@ -199,7 +202,7 @@ Technology demand percentages are calculated only from the verified direct Job B
 
 ### 7. Dashboard Development
 
-An interactive dashboard was developed using Streamlit.
+The project includes an interactive web dashboard built with HTML, CSS, and JavaScript.
 
 The dashboard presents information about:
 
@@ -214,7 +217,17 @@ The dashboard presents information about:
 - Technology demand
 - Individual job posting data
 
-The dashboard also includes filters that allow users to explore the data by province, month, and job title.
+The dashboard includes interactive filters that allow users to explore the data by province, month, and job title.
+
+A Streamlit version of the dashboard was also developed during the project. This version was used to explore the analysis interactively before the final public-facing dashboard was deployed through GitHub Pages.
+
+### 8. Web Deployment
+
+The final interactive dashboard was deployed publicly using GitHub Pages.
+
+The GitHub Pages version uses HTML, CSS, and JavaScript, allowing users to explore the project directly through a web browser without installing Python or running the Streamlit application locally.
+
+The source code, analysis files, and project documentation are maintained in the GitHub repository, while GitHub Pages provides the main public-facing version of the dashboard.
 
 ---
 
@@ -284,11 +297,17 @@ CA JOB Market/
 ├── notebooks/
 │   └── 01_data_exploration.ipynb
 │
+├── screenshots/
+│   └── dashboard-preview.png
+│
 ├── src/
 │   ├── database.py
 │   ├── sql_analysis.py
 │   └── test_setup.py
 │
+├── index.html
+├── style.css
+├── script.js
 ├── .gitignore
 ├── requirements.txt
 └── README.md
@@ -300,7 +319,19 @@ The five original monthly Job Bank CSV files are stored locally for analysis but
 
 ## Running the Project
 
-### 1. Clone the Repository
+There are two ways to explore the project.
+
+### Option 1: View the Public Dashboard
+
+The easiest way to explore the project is through the GitHub Pages website:
+
+**[Open the Live Dashboard](https://DiwURTandon.github.io/Canada-Job-Market-Data-Analysis-/)**
+
+No installation is required.
+
+### Option 2: Run the Project Locally
+
+#### 1. Clone the Repository
 
 Clone the project from GitHub and enter the project directory.
 
@@ -309,7 +340,7 @@ git clone https://github.com/DiwURTandon/Canada-Job-Market-Data-Analysis-.git
 cd Canada-Job-Market-Data-Analysis-
 ```
 
-### 2. Install the Required Packages
+#### 2. Install the Required Packages
 
 Install the Python packages listed in `requirements.txt`.
 
@@ -317,7 +348,7 @@ Install the Python packages listed in `requirements.txt`.
 pip install -r requirements.txt
 ```
 
-### 3. Build the SQLite Database
+#### 3. Build the SQLite Database
 
 Run:
 
@@ -327,7 +358,7 @@ python src/database.py
 
 This loads the processed datasets into the SQLite database and creates the tables used by the project.
 
-### 4. Run the SQL Analysis
+#### 4. Run the SQL Analysis
 
 Run:
 
@@ -337,7 +368,7 @@ python src/sql_analysis.py
 
 This displays the main SQL analysis results, including job demand, salaries, occupational skills, and other job market information.
 
-### 5. Launch the Streamlit Dashboard
+#### 5. Launch the Streamlit Dashboard
 
 Run:
 
@@ -381,8 +412,8 @@ Possible future improvements to this project include:
 
 This project provides a data-driven view of the Canadian job market for data analytics and data science careers.
 
-By combining Job Bank posting data, OaSIS occupational information, SQL analysis, technology research, and an interactive Streamlit dashboard, the project shows both the technical and general skills connected to data-related careers in Canada.
+By combining Job Bank posting data, OaSIS occupational information, Python data processing, SQLite and SQL analysis, technology research, and interactive web development, the project examines both the technical and general skills connected to data-related careers in Canada.
 
 The results suggest that programming and database technologies such as Python, SQL, and MySQL are useful in the field, while broader abilities such as problem solving, digital literacy, critical thinking, and systems analysis are also highly important.
 
-The project also demonstrates a complete data analysis workflow, from collecting and cleaning raw data to storing, querying, analyzing, visualizing, and presenting the final results.
+The project demonstrates a complete data analysis workflow, from collecting and cleaning raw data to storing, querying, analyzing, visualizing, and presenting the final results through a publicly deployed interactive dashboard.
