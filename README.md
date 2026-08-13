@@ -11,6 +11,12 @@ The goal of this project is to provide an evidence-based view of what the Canadi
 ---
 
 
+## Live Dashboard
+
+[View the Interactive Dashboard](https://canada-job-market-analysis.streamlit.app/)
+
+---
+
 
 ## Objective
 
