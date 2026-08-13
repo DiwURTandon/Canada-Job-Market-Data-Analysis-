@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Canadian Data Job Market Dashboard
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <!-- Chart.js -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js"
+        defer>
+    </script>
+
+    <!-- Papa Parse -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"
+        defer>
+    </script>
+
+    <script
+        src="script.js"
+        defer>
+    </script>
+
+</head>
+
+
+<body>
+
+<div class="app-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-inner">
+
+            <h2>
+                🔎 Filter Job Postings
+            </h2>
+
+            <p class="sidebar-description">
+                Refine the dashboard using the filters below.
+            </p>
+
+
+            <div class="filter-group">
+
+                <label>
+                    Province / Territory
+                </label>
+
+                <select id="provinceFilter">
+                    <option value="All">
+                        All Provinces / Territories
+                    </option>
+                </select>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <label>
+                    Month
+                </label>
+
+                <select id="monthFilter">
+                    <option value="All">
+                        All Months
+                    </option>
+                </select>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <label>
+                    Job Title
+                </label>
+
+                <select id="jobTitleFilter">
+                    <option value="All">
+                        All Job Titles
+                    </option>
+                </select>
+
+            </div>
+
+
+            <button
+                id="resetFilters"
+                class="reset-button"
+            >
+                Reset Filters
+            </button>
+
+
+            <div class="sidebar-divider"></div>
+
+
+            <div class="sidebar-source">
+
+                <strong>
+                    Sources
+                </strong>
+
+                <p>
+                    Government of Canada Job Bank
+                </p>
+
+                <p>
+                    Government of Canada OaSIS
+                </p>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <span class="hero-badge">
+                MARCH – JULY 2026
+            </span>
+
+            <h1>
+                🇨🇦 Canadian Data Job Market Dashboard
+            </h1>
+
+            <p>
+                Explore Canadian data analytics and data science
+                job postings through job demand, salary trends,
+                regional distribution, occupational competencies,
+                and verified employer technology requirements.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             MARKET OVERVIEW
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    📊 Market Overview
+                </h2>
+
+                <p>
+                    Key figures for the currently selected
+                    job-market filters.
+                </p>
+
+            </div>
+
+
+            <div class="kpi-grid">
+
+                <div class="kpi-card">
+
+                    <span class="kpi-label">
+                        Job Postings
+                    </span>
+
+                    <span
+                        class="kpi-value"
+                        id="totalJobs"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <span class="kpi-label">
+                        Reported Vacancies
+                    </span>
+
+                    <span
+                        class="kpi-value"
+                        id="totalVacancies"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <span class="kpi-label">
+                        Provinces / Territories
+                    </span>
+
+                    <span
+                        class="kpi-value"
+                        id="provinceCount"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <span class="kpi-label">
+                        Average Estimated Salary
+                    </span>
+
+                    <span
+                        class="kpi-value"
+                        id="averageSalary"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="caption">
+                Dashboard values update automatically
+                when filters are changed.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             PROVINCE DEMAND
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    🗺️ Job Demand by Province / Territory
+                </h2>
+
+            </div>
+
+
+            <div class="chart-card">
+
+                <canvas id="provinceChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TIME
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    📈 Job Postings Over Time
+                </h2>
+
+            </div>
+
+
+            <div class="chart-card">
+
+                <canvas id="monthlyChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             JOB TITLES
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    💼 Most Common Job Titles
+                </h2>
+
+            </div>
+
+
+            <div class="chart-card">
+
+                <canvas id="titlesChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SALARY
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    💰 Salary Analysis
+                </h2>
+
+            </div>
+
+
+            <div class="chart-card">
+
+                <h3>
+                    Average Estimated Salary by Job Title
+                </h3>
+
+                <canvas id="salaryTitleChart"></canvas>
+
+                <p class="caption">
+                    Only job titles represented by at least
+                    two postings are included.
+                </p>
+
+            </div>
+
+
+            <div class="chart-card">
+
+                <h3>
+                    Average Estimated Salary by Province / Territory
+                </h3>
+
+                <canvas id="salaryProvinceChart"></canvas>
+
+
+                <div
+                    id="salaryWarning"
+                    class="warning-box hidden"
+                >
+                    Some provincial salary averages are based
+                    on fewer than three postings and should be
+                    interpreted cautiously.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             OCCUPATIONAL SKILLS
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    🧠 Occupational Skills & Competencies
+                </h2>
+
+                <p>
+                    OaSIS occupation-level skill ratings linked
+                    to the analyzed Job Bank occupations through
+                    NOC 2021 classifications.
+                </p>
+
+            </div>
+
+
+            <div class="chart-card">
+
+                <canvas id="skillsChart"></canvas>
+
+                <p class="caption">
+                    Ratings use a 0–5 OaSIS scale.
+                    These are occupational competencies,
+                    not technology-frequency counts.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TECHNOLOGY
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    💻 Technology Demand
+                </h2>
+
+                <p>
+                    Technology requirements recovered from
+                    verified direct Job Bank postings.
+                </p>
+
+            </div>
+
+
+            <div class="tech-kpi-grid">
+
+                <div class="small-kpi-card">
+
+                    <span class="small-kpi-label">
+                        Verified Sample
+                    </span>
+
+                    <span
+                        class="small-kpi-value"
+                        id="verifiedSample"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+
+                <div class="small-kpi-card">
+
+                    <span class="small-kpi-label">
+                        Postings With Technology Data
+                    </span>
+
+                    <span
+                        class="small-kpi-value"
+                        id="techPostings"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+
+                <div class="small-kpi-card">
+
+                    <span class="small-kpi-label">
+                        Top Reported Technology
+                    </span>
+
+                    <span
+                        class="small-kpi-value tech-name"
+                        id="topTechnology"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="chart-card">
+
+                <h3>
+                    Specific Technologies & Platforms
+                </h3>
+
+                <canvas id="technologyChart"></canvas>
+
+            </div>
+
+
+            <div class="warning-box">
+
+                Technology demand is based on a smaller verified
+                sample of direct Job Bank postings because the
+                monthly Job Bank open-data files do not contain
+                full technology-requirement text.
+
+                <br><br>
+
+                These percentages should therefore not be
+                interpreted as representing all job postings
+                in the main dataset.
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             JOB TABLE
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    📋 Explore Job Postings
+                </h2>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Job Title
+                                </th>
+
+                                <th>
+                                    Province / Territory
+                                </th>
+
+                                <th>
+                                    City
+                                </th>
+
+                                <th>
+                                    Month
+                                </th>
+
+                                <th>
+                                    Vacancies
+                                </th>
+
+                                <th>
+                                    Estimated Annual Salary
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="jobsTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <button
+                    id="showMoreJobs"
+                    class="show-more-button"
+                >
+                    Show More
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             METHODOLOGY
+        ================================================== -->
+
+        <section class="dashboard-section">
+
+            <details class="methodology">
+
+                <summary>
+                    ℹ️ About the Data & Methodology
+                </summary>
+
+
+                <div class="methodology-content">
+
+
+                    <h3>
+                        Job Market Data
+                    </h3>
+
+                    <p>
+                        Government of Canada Job Bank monthly
+                        open-data files from March through July
+                        2026 were used to measure job posting
+                        volume, geographic demand, job-title
+                        distribution, salary patterns, and
+                        vacancy counts.
+                    </p>
+
+
+                    <h3>
+                        Salary Standardization
+                    </h3>
+
+                    <p>
+                        Hourly salaries were converted using
+                        40 hours per week × 52 weeks per year.
+                    </p>
+
+                    <p>
+                        Bi-weekly salaries were converted using
+                        26 pay periods per year.
+                    </p>
+
+
+                    <h3>
+                        Occupational Skills
+                    </h3>
+
+                    <p>
+                        Government of Canada OaSIS occupational
+                        profiles were linked to Job Bank postings
+                        using NOC 2021 codes.
+                    </p>
+
+
+                    <h3>
+                        Technology Demand
+                    </h3>
+
+                    <p>
+                        The monthly Job Bank CSV files do not
+                        contain full job-requirement text.
+                        A subset of direct Job Bank postings
+                        was therefore matched to archived
+                        Job Bank information.
+                    </p>
+
+                    <p>
+                        Technology requirements and OaSIS
+                        occupational competencies are intentionally
+                        analyzed separately.
+                    </p>
+
+
+                </div>
+
+            </details>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT
+        ================================================== -->
+
+        <section class="contact-section">
+
+            <h2>
+                About This Project
+            </h2>
+
+            <p>
+                Built with Python, pandas, SQL,
+                SQLite, JavaScript, and GitHub Pages.
+            </p>
+
+
+            <div class="contact-buttons">
+
+                <a
+                    href="https://github.com/DiwURTandon/Canada-Job-Market-Data-Analysis-"
+                    target="_blank"
+                    class="contact-button"
+                >
+                    GitHub Repository
+                </a>
+
+
+                <a
+                    href="mailto:dtq303@uregina.ca"
+                    class="contact-button"
+                >
+                    Contact Me
+                </a>
+
+            </div>
+
+
+            <p class="copyright">
+                © 2026 Diwakar Tandon
+            </p>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+</body>
+
+</html>
