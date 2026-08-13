@@ -325,7 +325,7 @@ There are two ways to explore the project.
 
 The easiest way to explore the project is through the GitHub Pages website:
 
-**[Open the Live Dashboard](https://DiwURTandon.github.io/Canada-Job-Market-Data-Analysis-/)**
+**[Open the Live Dashboard](https://github.com/DiwURTandon/DiwURTandon.github.io)**
 
 No installation is required.
 
