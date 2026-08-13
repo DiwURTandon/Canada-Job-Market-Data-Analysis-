@@ -17,6 +17,12 @@ The goal of this project is to provide an evidence-based view of what the Canadi
 
 ---
 
+## Dashboard Preview
+
+![Canadian Job Market Analysis Dashboard](screenshots/dashboard-preview.png)
+
+
+---
 
 ## Objective
 
