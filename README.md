@@ -14,7 +14,7 @@ The goal of this project is to provide an evidence-based view of what the Canadi
 
 Explore the interactive Canadian Job Market Dashboard:
 
-**[View Live Dashboard](https://DiwURTandon.github.io/Canada-Job-Market-Data-Analysis-/)**
+**[View Live Dashboard](https://diwurtandon.github.io/)**
 
 ---
 
@@ -325,7 +325,7 @@ There are two ways to explore the project.
 
 The easiest way to explore the project is through the GitHub Pages website:
 
-**[Open the Live Dashboard](https://github.com/DiwURTandon/DiwURTandon.github.io)**
+**[Open the Live Dashboard](https://diwurtandon.github.io/)**
 
 No installation is required.
 
@@ -336,7 +336,7 @@ No installation is required.
 Clone the project from GitHub and enter the project directory.
 
 ```bash
-git clone https://github.com/DiwURTandon/Canada-Job-Market-Data-Analysis-.git
+git clone https://diwurtandon.github.io/
 cd Canada-Job-Market-Data-Analysis-
 ```
 
